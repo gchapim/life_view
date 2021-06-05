@@ -2,6 +2,8 @@
 
 Conway's Game of Life implementation using Phoenix LiveView.
 
+![ezgif-7-2fad6e52d271](https://user-images.githubusercontent.com/1141813/120896908-09181080-c5fa-11eb-8f10-e300a95fc1ff.gif)
+
 ## Details
 
 Life is an umbrella application to better separate the core game module (`Life`) from the interface (`LifeWeb`).
