@@ -89,3 +89,15 @@
   display: block;
   margin: -1rem 0 2rem;
 }
+
+td {
+  box-shadow: 0px 0px 1px 0px #eaeaea;
+  width: 10px;
+  height: 10px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.alive {
+  background-color: #730202;
+}
