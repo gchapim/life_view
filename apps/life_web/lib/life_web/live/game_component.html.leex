@@ -1,0 +1,11 @@
+<table style="width: 100%">
+<%= for y <- 0..@grid_size.y - 1 do %>
+  <tr>
+  <%= for x <- 0..@grid_size.x - 1 do %>
+    <td id='<%= "grid-#{x}-#{y}" %>'
+      <%= if Grid.alive?(@grid, {x, y}), do: "class=alive" %>>
+    </td>
+  <% end %>
+  </tr>
+<% end %>
+</table>
