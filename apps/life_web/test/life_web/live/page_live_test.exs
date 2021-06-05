@@ -1,5 +1,5 @@
 defmodule LifeWeb.PageLiveTest do
-  use LifeWeb.ConnCase
+  use LifeWeb.ConnCase, async: true
 
   import Phoenix.LiveViewTest
 
