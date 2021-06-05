@@ -1,5 +1,5 @@
 defmodule Life.Grid do
-  defstruct x_size: 0, y_size: 0, data: MapSet.new()
+  defstruct data: MapSet.new()
 
   @neighbours_offset [
     {-1, -1},
@@ -11,8 +11,8 @@ defmodule Life.Grid do
     {1, 0},
     {1, 1}
   ]
-  def new(alive_positions, x_size, y_size) do
-    %__MODULE__{x_size: x_size, y_size: y_size, data: MapSet.new(alive_positions)}
+  def new(alive_positions) do
+    %__MODULE__{data: MapSet.new(alive_positions)}
   end
 
   def alive?(%__MODULE__{data: data}, position) do
@@ -29,7 +29,7 @@ defmodule Life.Grid do
     data
     |> Stream.flat_map(&[&1 | &1 |> neighbours() |> Enum.to_list()])
     |> Stream.filter(&next_alive?(grid, &1))
-    |> new(grid.x_size, grid.y_size)
+    |> new()
   end
 
   defp next_alive?(grid, position) do

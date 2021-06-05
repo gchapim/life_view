@@ -7,26 +7,21 @@ defmodule Life.GridTest do
     test "new/1 returns new grid" do
       alive_positions = [{1, 0}, {1, 1}]
 
-      assert Grid.new(alive_positions, 3, 4) == %Grid{
-               data: MapSet.new(alive_positions),
-               x_size: 3,
-               y_size: 4
-             }
+      assert Grid.new(alive_positions) == %Grid{data: MapSet.new(alive_positions)}
     end
   end
 
   describe "with grid" do
-    @blinker {[
-                {2, 1},
-                {2, 2},
-                {2, 3}
-              ], 40, 40}
+    @blinker [
+      {2, 1},
+      {2, 2},
+      {2, 3}
+    ]
 
     setup do
-      {blinker_positions, x_size, y_size} = @blinker
-      grid = Grid.new(blinker_positions, x_size, y_size)
+      grid = Grid.new(@blinker)
 
-      empty_grid = Grid.new([], 40, 40)
+      empty_grid = Grid.new([])
 
       %{grid: grid, empty_grid: empty_grid}
     end
@@ -44,19 +39,11 @@ defmodule Life.GridTest do
     end
 
     test "next_grid/1 for grid", %{grid: grid} do
-      assert Grid.next_grid(grid) == %Grid{
-               data: MapSet.new([{1, 2}, {2, 2}, {3, 2}]),
-               x_size: 40,
-               y_size: 40
-             }
+      assert Grid.next_grid(grid) == %Grid{data: MapSet.new([{1, 2}, {2, 2}, {3, 2}])}
     end
 
     test "next_grid/1 for empty grid", %{empty_grid: empty_grid} do
-      assert Grid.next_grid(empty_grid) == %Grid{
-               data: MapSet.new([]),
-               x_size: 40,
-               y_size: 40
-             }
+      assert Grid.next_grid(empty_grid) == %Grid{data: MapSet.new([])}
     end
   end
 end
