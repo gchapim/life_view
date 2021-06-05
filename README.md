@@ -6,11 +6,11 @@ A Phoenix LiveView implementation of Conway's Game of Life.
 
 ## Details
 
-Life is an umbrella application to better separate the core game module (`Life`) from the interface (`LifeWeb`).
-This way it's easier to extract the core implementation to use with other interfaces (like terminal or a different framework).
+Life is an umbrella application in order to better separate the core game context (`Life`) from the interface (`LifeWeb`).
+In this way, it's easier to extract the core implementation to use with other interfaces (like terminal or a different framework).
 
 The main modules are `Life.Grid` (game core functions) and `LifeWeb.PageLive` (LiveView implementation).
-For now the initial input comes from the configured defined inside `config/grid.exs`. As we only keep track of the alive cells, all you need to do to change the initial input is to add the two-dimensional alive positions as tuples to the List.
+For now the initial input comes from the configuration defined inside `config/grid.exs`. As we only keep track of the alive cells, all you need to do to change the initial input is to add the two-dimensional alive positions as tuples to the List.
 
 ## To-do
 
