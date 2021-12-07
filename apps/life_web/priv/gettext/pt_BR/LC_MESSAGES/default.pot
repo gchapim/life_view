@@ -1,0 +1,23 @@
+#  This file is a PO Template file.
+# 
+#  "msgid"s here are often extracted from source code.
+#  Add new translations manually only if they're dynamic
+#  translations that can't be statically extracted.
+# 
+#  Run "mix gettext.extract" to bring this file up to
+#  date. Leave "msgstr"s empty as changing them here as no
+#  effect: edit them in PO (.po) files instead.
+# Translators:
+# Gustavo Chapim, 2021
+# 
+msgid ""
+msgstr ""
+"Last-Translator: Gustavo Chapim, 2021\n"
+"Language-Team: Portuguese (Brazil) (https://www.transifex.com/saltpay/teams/128717/pt_BR/)\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: lib/life_web/templates/layout/live.html.leex:1
+#, elixir-format
+msgid "Live test"
+msgstr "Ao vivo teste"
