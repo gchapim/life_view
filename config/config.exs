@@ -9,8 +9,6 @@
 # move said applications out of the umbrella.
 use Mix.Config
 
-
-
 config :life_web,
   generators: [context_app: :life]
 
